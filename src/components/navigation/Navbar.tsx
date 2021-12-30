@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import {Grid, Typography} from '@mui/material';
+import {Grid, Typography, Avatar} from '@mui/material';
 import Button from '@mui/material/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import HomeIcon from '@mui/icons-material/Home';
@@ -8,6 +8,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import image from '../../assets/smaller_image_of_myself_centered.png';
 
 interface NavProps {
     darkmode: boolean
@@ -60,11 +61,17 @@ export default function Navbar(props: NavProps) {
         footer: {
             marginTop: '20px !important',
             textAlign: 'center'
+        },
+        image: {
+            
         }
     }));
     const classes = useStyles();
     return (
         <Grid direction='column' className={classes.navbar}>
+            <Grid item xs={12} container justifyContent='center' className={classes.name}>
+                <Avatar className={classes.image} src={image}/>
+            </Grid>
             <Grid item xs={12} container justifyContent='center' className={classes.name}>
                 <Grid item xs={12}>
                     <Typography variant="h4">Jason</Typography>
@@ -77,13 +84,13 @@ export default function Navbar(props: NavProps) {
                 <NavButton icon={HomeIcon} text='Home' link='/'/>
             </Grid>
             <Grid item xs={12} className={classes.gridItem}>
-                <NavButton icon={PersonIcon} text='About' link='/'/>
+                <NavButton icon={PersonIcon} text='About' link='/about'/>
             </Grid>
             <Grid item xs={12} className={classes.gridItem}>
-                <NavButton icon={PersonIcon} text='Education' link='/'/>
+                <NavButton icon={PersonIcon} text='Education' link='/education'/>
             </Grid>
             <Grid item xs={12} className={classes.gridItem}>
-                <NavButton icon={PersonIcon} text='Experience' link='/'/>
+                <NavButton icon={PersonIcon} text='Experience' link='/experience'/>
             </Grid>
             <Grid item xs={12} className={classes.gridItem}>
                 <NavButton icon={PersonIcon} text='Skills' link='/'/>
@@ -96,7 +103,7 @@ export default function Navbar(props: NavProps) {
                         </Button>
             </Grid>
             <Collapse in={open} timeout="auto" unmountOnExit>
-                <Grid item xs={12} direction='column'>
+                <Grid item xs={12} direction='column' container>
                     <Grid item xs={12} className={classes.gridItem}>
                         <NavButton icon={PersonIcon} text='Google' link='https://google.com'/>
                     </Grid>
