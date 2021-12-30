@@ -9,6 +9,8 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import image from '../../assets/smaller_image_of_myself_centered.png';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import CoronavirusIcon from '@mui/icons-material/Coronavirus';
 
 interface NavProps {
     darkmode: boolean
@@ -93,7 +95,7 @@ export default function Navbar(props: NavProps) {
                 <NavButton icon={PersonIcon} text='Experience' link='/experience'/>
             </Grid>
             <Grid item xs={12} className={classes.gridItem}>
-                <NavButton icon={PersonIcon} text='Skills' link='/'/>
+                <NavButton icon={PersonIcon} text='Skills' link='/skills'/>
             </Grid>
             <Grid item xs={12} className={classes.gridItem}>
                 <Button color="inherit" className={classes.button} startIcon={<WorkIcon/>} 
@@ -105,13 +107,10 @@ export default function Navbar(props: NavProps) {
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <Grid item xs={12} direction='column' container>
                     <Grid item xs={12} className={classes.gridItem}>
-                        <NavButton icon={PersonIcon} text='Google' link='https://google.com'/>
+                        <NavButton icon={VolunteerActivismIcon} text='Mixtape Matchmaker' link='https://mixtape-matchmaker.web.app/login'/>
                     </Grid>
                     <Grid item xs={12} className={classes.gridItem}>
-                        <NavButton icon={PersonIcon} text='Google' link='https://google.com'/>
-                    </Grid>
-                    <Grid item xs={12} className={classes.gridItem}>
-                        <NavButton icon={PersonIcon} text='About' link='/login'/>
+                        <NavButton icon={CoronavirusIcon} text='Pandemic Solver' link='https://pandemic-activity-problem.web.app/'/>
                     </Grid>
                 </Grid>
             </Collapse>

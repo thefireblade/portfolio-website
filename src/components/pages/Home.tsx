@@ -25,14 +25,17 @@ const Home = (props: HomeProps) => {
             width: '100%',
         },
         content:{
-            padding: '20px'
+            padding: '20px',
+            paddingLeft: '60px',
+            paddingTop: '40px'
         },
         bodyP: {
             paddingLeft: '20px',
             paddingRight: '20px',
             paddingBottom: '20px',
             width: '80%',
-			color: props.darkmode ? "#a4bfcb !important" : "#01090d !important"
+			color: props.darkmode ? "#a4bfcb !important" : "#01090d !important",
+            backgroundColor: props.darkmode ? "#01090d !important":  "#a4bfcb !important" 
         },
         image: {
             padding: '20px',
@@ -47,12 +50,9 @@ const Home = (props: HomeProps) => {
             <Typography className={classes.content} variant={lg_match ? 'h3': md_match ? 'h4' : 'h5'}>Welcome to my website!</Typography>
             <Grid container>
                 <Grid item md={8} sm={12} container justifyContent="center">
-                    <TextField
+                    <textarea
                         disabled
                         className={classes.bodyP}
-                        label="?Secret?"
-                        variant="filled"
-                        multiline
                         rows={20}
                         defaultValue={defaultString}
                     />

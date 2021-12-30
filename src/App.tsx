@@ -9,12 +9,13 @@ import Navbar from "./components/navigation/Navbar";
 import { Grid, Typography } from "@material-ui/core";
 import Education from "./components/pages/Education";
 import Experience from "./components/pages/Experience";
+import Skills from "./components/pages/Skills";
 
 
 
 
 const App = () => {	
-	const [darkmode, setDarkmode] = useState(false);
+	const [darkmode, setDarkmode] = useState(true);
 	
 	useEffect(() => {
 		let darkmodeSetting = localStorage.getItem('darkmode');
@@ -64,6 +65,7 @@ const App = () => {
             </Grid>
 			<Grid item xs={7} md={9} lg={8}>
 				<Routes>
+					<Route path="/skills" element={<Skills darkmode={darkmode}/>}/>
 					<Route path="/experience" element={<Experience darkmode={darkmode}/>}/>
 					<Route path="/education" element={<Education darkmode={darkmode}/>}/>
 					<Route path="/about" element={<About darkmode={darkmode}/>}/>
