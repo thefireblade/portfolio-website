@@ -51,7 +51,7 @@ const About = (props: AboutProps) => {
                     <Typist avgTypingDelay={5} cursor={{show: false}}>
                         <br/>
                         <Typography className={classes.contentHeader} variant={lg_match ? 'h3': md_match ? 'h4' : 'h5'}>About Me</Typography>
-                        <Typography className={classes.contentSum} variant={lg_match ? 'h5': md_match ? 'h6' : 'body1'}>I am currently pursuing a Master's degree in Computer Science at Columbia University. I received my undergraduate degree at the Honors College of Stony Brook University double majoring in Computer Science and Applied Mathematics and Statistics. I have various interests in software development stacks including systems, databases, frontend, and backend.</Typography>
+                        <Typography className={classes.contentSum} variant={lg_match ? 'h5': md_match ? 'h6' : 'body1'}>I am currently pursuing a Master's degree in Computer Science at Columbia University. I received my undergraduate degree at the Honors College of Stony Brook University double majoring in Computer Science and Applied Mathematics and Statistics. I have various interests in development stacks including systems, databases, frontend, and backend, devops, and machine learning.</Typography>
                         <br/>
                         <Button className={classes.social} variant="contained" startIcon={<GitHubIcon/>} href='https://github.com/thefireblade'>Github Repositories</Button>               
                         <br/>   
