@@ -65,7 +65,7 @@ const Experience = (props: ExperienceProps) => {
                 </TimelineItem>
                 <TimelineItem>
                 <TimelineOppositeContent color='secondary'>
-                    <Typography variant="caption">September 2021 - November 2021</Typography>
+                    <Typography variant="caption">September 2021 - December 2021</Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
                     <TimelineDot variant="outlined" />
@@ -73,7 +73,7 @@ const Experience = (props: ExperienceProps) => {
                 </TimelineSeparator>
                 <TimelineContent>
                     <Typography variant="h6">Flight Health</Typography>
-                    <Typography variant="body2">Software Engineering Intern</Typography>
+                    <Typography variant="body2">Part-time Software Engineer</Typography>
                     <Typography variant="caption">
                         + Developed and maintained React plugins controlling phone line connections for call center agents <br/>
                         + Created RESTful APIs on the main backend server that managed patient and agent data and communications.<br/>

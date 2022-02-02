@@ -115,13 +115,16 @@ const Education = (props: EducationProps) => {
                     <Typography variant="h6">Columbia University</Typography>
                     <Typography variant="body2">Masters of Science</Typography>
                     <Typography variant="body2">Computer Science Major</Typography>
-                    <Typography variant="caption">GPA: 4.0 / 4.0</Typography>
+                    <Typography variant="caption">GPA: 3.5 / 4.0</Typography>
                     <br/>
                     <Typography variant="caption">
                     - Analysis of Algorithms<br/>
                     - Computational Aspects of Robotics<br/>
                     - Databases<br/>
-                    - Natural Language Processing<br/></Typography>
+                    - Natural Language Processing<br/>
+                    - Articial Intelligence<br/>
+                    - Cloud Computing<br/>
+                    - Computational Complexity<br/></Typography>
                 </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
