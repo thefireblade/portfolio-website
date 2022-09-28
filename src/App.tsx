@@ -10,12 +10,15 @@ import { Grid, Typography } from "@material-ui/core";
 import Education from "./components/pages/Education";
 import Experience from "./components/pages/Experience";
 import Skills from "./components/pages/Skills";
+import { Button } from "@mui/material";
+import MiniDrawer from "./components/navigation/MiniDrawer";
 
 
 
 
 const App = () => {	
 	const [darkmode, setDarkmode] = useState(true);
+	const [navOpen, setNavOpen] = useState(false);
 	
 	useEffect(() => {
 		let darkmodeSetting = localStorage.getItem('darkmode');
@@ -43,7 +46,7 @@ const App = () => {
 			width: "100%",
 			margin: 0,
 			backgroundColor: darkmode ? "#030f15" : "#ede1df",
-			color: darkmode ? "#a4bfcb" : "#01090d"
+			color: darkmode ? "#a4bfcb" : "#01090d"   
 		},
 		page: {
 			width: '100%',
@@ -54,34 +57,29 @@ const App = () => {
 		}
 	}));
 	const classes = useStyles();
-  
-  return (
-	<div className={classes.main}>
-		<BrowserRouter>
+
+	const toggleNav = () => {
+		setNavOpen(!navOpen)
+	}
 	
-        <Grid container className={classes.page}>
-            <Grid item xs={5} md={3} lg={2}>
-                <Navbar darkmode={darkmode}/>
-            </Grid>
-			<Grid item xs={7} md={9} lg={8}>
-				<Routes>
-					<Route path="/skills" element={<Skills darkmode={darkmode}/>}/>
-					<Route path="/experience" element={<Experience darkmode={darkmode}/>}/>
-					<Route path="/education" element={<Education darkmode={darkmode}/>}/>
-					<Route path="/about" element={<About darkmode={darkmode}/>}/>
-					<Route path="/" element={<Home darkmode={darkmode}/>} />
-					<Route path="/:anything" element={<Home darkmode={darkmode}/>} />
-					<Route path="/:anything/:anything" element={<Home darkmode={darkmode}/>} />
-				</Routes>
+  
+  	return (
+		<div className={classes.main}>
+			<Grid container className={classes.page}>
+				<MiniDrawer darkmode={darkmode}>
+					<Home darkmode={darkmode}/>
+					<About darkmode={darkmode}/>
+					<Education darkmode={darkmode}/>
+					<Experience darkmode={darkmode}/>
+					<Skills darkmode={darkmode}/>
+				</MiniDrawer>
 			</Grid>
-        </Grid>
-		</BrowserRouter>
-		<DarkModeSwitch checked={darkmode} onClick={() => {
-			localStorage.setItem('darkmode', !darkmode ? 'true' : 'false');
-			setDarkmode(!darkmode);
-		}}/>
-	</div>
-  );  
+			<DarkModeSwitch checked={darkmode} onClick={() => {
+				localStorage.setItem('darkmode', !darkmode ? 'true' : 'false');
+				setDarkmode(!darkmode);
+			}}/>
+		</div>
+	);  
 }
 
 export default App;

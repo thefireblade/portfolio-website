@@ -24,7 +24,11 @@ const Experience = (props: ExperienceProps) => {
     const useStyles = makeStyles((theme: any)=>({
         page: {
             width: '100%',
-            height: '100%'
+            height: '1150px',
+			backgroundColor: props.darkmode ? "#384347" : "#6f7475",
+			color: props.darkmode ? "#a4bfcb" : "#01090d",
+            justifyContent: 'center',
+            textAlign: 'center'   
         },
         content:{
             padding: '20px',
@@ -40,16 +44,54 @@ const Experience = (props: ExperienceProps) => {
             marginTop: lg_match ? '40px !important' : md_match ? '60px !important' : '80px !important',
             width: lg_match ? '220px' : md_match ? '150px ' : '100px',
             height: lg_match ? '299px' : md_match ? '224px ' : '149px',
+        },
+        anchor: {
+            position: 'absolute',
+            marginTop: '-60px',
         }
     }));
     const classes = useStyles();
     return (
         <Grid container className={classes.page}>
+            <div id="experience" className={classes.anchor}></div>
             <Grid item xs={12}>
                 <Typography className={classes.content} variant={lg_match ? 'h3': md_match ? 'h4' : 'h5'}>My Experience Timeline</Typography>
             </Grid>
             <Grid item xs={12}>
                 <Timeline position="alternate" className={classes.bodyP}>
+                <TimelineItem>
+                <TimelineOppositeContent color='secondary'>
+                    <Typography variant="caption">September 2022 - Present</Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineDot variant="outlined" />
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Typography variant="h6">Telsa</Typography>
+                    <Typography variant="body2">Part-time Full Stack Software Engineering Intern</Typography>
+                    <Typography variant="caption">
+                        + Working in Tesla's FleetNet Vehicle Software team (Same team). <br/>
+                    </Typography>
+                </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                <TimelineOppositeContent color='secondary'>
+                    <Typography variant="caption">May 2022 - August 2022</Typography>
+                </TimelineOppositeContent>
+                <TimelineSeparator>
+                    <TimelineDot variant="outlined" />
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Typography variant="h6">Telsa</Typography>
+                    <Typography variant="body2">Full Stack Software Engineering Intern</Typography>
+                    <Typography variant="caption">
+                        + Worked in Tesla's FleetNet Vehicle Software team. <br/>
+                        + Wrote programs in Go, Ruby, and JavaScript. <br/>
+                    </Typography>
+                </TimelineContent>
+                </TimelineItem>
                 <TimelineItem>
                 <TimelineOppositeContent color='secondary'>
                     <Typography variant="caption">January 2022</Typography>
@@ -60,7 +102,12 @@ const Experience = (props: ExperienceProps) => {
                 </TimelineSeparator>
                 <TimelineContent>
                     <Typography variant="h6">RBC Capital Markets</Typography>
-                    <Typography variant="body2">Software Engineering Intern</Typography>
+                    <Typography variant="body2">Winter Analyst</Typography>
+                    <Typography variant="caption">
+                        + Wrote container deployment scripts utilizing site reliability engineering principles for Kubernetes and Docker. <br/>
+                        + Designed core components using React and Material UI to display down time in server statuses. <br/>
+                        + Constructed database Object Relational Models and REST APIs to manage down time server data. <br/>
+                    </Typography>
                 </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>

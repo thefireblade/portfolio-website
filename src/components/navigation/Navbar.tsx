@@ -1,6 +1,5 @@
 import React, { useState} from "react";
-import {Grid, Typography, Avatar} from '@mui/material';
-import Button from '@mui/material/Button';
+import {Grid, Typography, Avatar, Button} from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
@@ -13,13 +12,14 @@ import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import CoronavirusIcon from '@mui/icons-material/Coronavirus';
 
 interface NavProps {
-    darkmode: boolean
+    darkmode: boolean,
+    toggleOpen(): any,
 }
 
 interface NavButtonProps {
     text: string,
     link: string,
-    icon: typeof HomeIcon
+    icon: typeof HomeIcon,
 }
 
 const NavButton = (props: NavButtonProps) => {
@@ -71,8 +71,12 @@ export default function Navbar(props: NavProps) {
     const classes = useStyles();
     return (
         <Grid direction='column' className={classes.navbar}>
+            <Grid item xs={12} container>
+               <Button className={classes.button}>
+               </Button>
+            </Grid>
             <Grid item xs={12} container justifyContent='center' className={classes.name}>
-                <Avatar className={classes.image} src={image}/>
+                <Avatar src={image}/>
             </Grid>
             <Grid item xs={12} container justifyContent='center' className={classes.name}>
                 <Grid item xs={12}>

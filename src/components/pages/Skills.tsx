@@ -2,7 +2,7 @@ import React, { useState, Component } from "react";
 import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Grid, Typography, Card, CardMedia, CardContent } from "@mui/material";
+import { Grid, Typography, Card, CardMedia, CardContent, TextField } from "@mui/material";
 import python from '../../assets/Python_logo_icon.png';
 import javascript from '../../assets/javascript_logo.png';
 import typescript from '../../assets/1_MjkBcGkCPD1Z-wwIP1h-zg.png';
@@ -31,6 +31,7 @@ import hadoop from '../../assets/hadoop.jpg';
 import java from '../../assets/java.jpg';
 import mongodb from '../../assets/mongodb.jpg';
 import aws from '../../assets/aws.png';
+import { Height } from "@mui/icons-material";
 
 
 
@@ -116,8 +117,18 @@ const Skills = (props: SkillsProps) => {
     const lg_match = useMediaQuery(theme.breakpoints.up('lg'));
     
     const useStyles = makeStyles((theme: any)=>({
+        page: {
+            width: '100%',
+            minHeight: '1000px',
+			backgroundColor: props.darkmode ? "#030f15" : "#ede1df",
+			color: props.darkmode ? "#a4bfcb" : "#01090d",
+            justifyContent: 'center',
+            textAlign: 'center'
+        },
         content: {
-            padding: '20px'
+            padding: '20px',
+			backgroundColor: props.darkmode ? "#030f15" : "#ede1df",
+			color: props.darkmode ? "#a4bfcb" : "#01090d",
         },
         griditem: {
             margin: '10px'
@@ -131,10 +142,15 @@ const Skills = (props: SkillsProps) => {
             padding: '20px'
         },
         searchfield: {
-			color: props.darkmode ? "#a4bfcb !important" : "#01090d !important",
-            backgroundColor: props.darkmode ? "#01090d !important":  "#a4bfcb !important",
+			color: props.darkmode ? "#01090d !important" : "#a4bfcb !important",
+            backgroundColor: props.darkmode ? "#81888a !important":  "#13262b !important",
             width: '100%',
-            margin: '20px'
+            margin: '20px',
+            Height: '35px',
+            fontSize: '20px',
+            border: '0',
+            outline: '0',
+            borderRadius: '10px'
         },
         iconImage: {
             width: '100px',
@@ -148,11 +164,16 @@ const Skills = (props: SkillsProps) => {
             paddingTop: '0',
 			color: props.darkmode ? "#a4bfcb !important" : "#01090d !important",
             backgroundColor: props.darkmode ? "#1f3640 !important":  "#a4bfcb !important",
-        }
+        },
+        anchor: {
+            position: 'absolute',
+            marginTop: '-60px',
+        },
     }));
     const classes = useStyles();
     return (
-    <Grid>
+    <Grid className={classes.page}>
+        <div id="skills" className={classes.anchor}></div>
         <Grid item xs={12} justifyContent='center'>
             <Typography variant="h3" className={classes.pageTitle}>My Skills</Typography>
         </Grid>

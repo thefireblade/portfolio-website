@@ -23,6 +23,11 @@ const Home = (props: HomeProps) => {
     const useStyles = makeStyles((theme: any)=>({
         page: {
             width: '100%',
+            height: '550px',
+			backgroundColor: props.darkmode ? "#030f15" : "#ede1df",
+			color: props.darkmode ? "#a4bfcb" : "#01090d",
+            justifyContent: 'center',
+            textAlign: 'center'           
         },
         content:{
             padding: '20px',
@@ -42,11 +47,16 @@ const Home = (props: HomeProps) => {
             marginTop: lg_match ? '40px !important' : md_match ? '60px !important' : '80px !important',
             width: lg_match ? '220px' : md_match ? '150px ' : '100px',
             height: lg_match ? '299px' : md_match ? '224px ' : '149px',
+        },
+        anchor: {
+            position: 'absolute',
+            top: '0',
         }
     }));
     const classes = useStyles();
     return (
         <Grid className={classes.page}>
+            <div id="home" className={classes.anchor}></div>
             <Typography className={classes.content} variant={lg_match ? 'h3': md_match ? 'h4' : 'h5'}>Welcome to my website!</Typography>
             <Grid container>
                 <Grid item md={8} sm={12} container justifyContent="center">
