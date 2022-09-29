@@ -1,6 +1,5 @@
 import { useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-
 import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
@@ -366,11 +365,14 @@ export default function MiniDrawer(props: MiniDrawerProps) {
         <List className={classes.list}>
           <ListItem key={'Mixtape Matchmaker'} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
+              component="a"
               sx={{
                 minHeight: 48,
                 justifyContent: open ? 'initial' : 'center',
                 px: 2.5,
               }}
+              target="_blank"
+              href="https://mixtape-matchmaker.web.app/login"
             >
               <ListItemIcon
                 sx={{
@@ -387,11 +389,14 @@ export default function MiniDrawer(props: MiniDrawerProps) {
           </ListItem>
           <ListItem key={'Pandemic Solver'} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
+              component="a"
               sx={{
                 minHeight: 48,
                 justifyContent: open ? 'initial' : 'center',
                 px: 2.5,
               }}
+              target="_blank"
+              href="https://pandemic-activity-problem.web.app/"
             >
               <ListItemIcon
                 sx={{
