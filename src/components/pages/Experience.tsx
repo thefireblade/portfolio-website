@@ -18,13 +18,14 @@ interface ExperienceProps {
 
 const Experience = (props: ExperienceProps) => {
     const theme = useTheme();
+    const xs_match = useMediaQuery(theme.breakpoints.up('sm'));
     const md_match = useMediaQuery(theme.breakpoints.up('md'));
     const lg_match = useMediaQuery(theme.breakpoints.up('lg'));
     
     const useStyles = makeStyles((theme: any)=>({
         page: {
             width: '100%',
-            height: '1150px',
+            height: md_match ? '1350px ' : xs_match ? '2100px': '3600px',
 			backgroundColor: props.darkmode ? "#384347" : "#6f7475",
 			color: props.darkmode ? "#a4bfcb" : "#01090d",
             justifyContent: 'center',

@@ -2,6 +2,8 @@ import React, { useState, Component } from "react";
 import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from "@material-ui/core";
+import Tooltip from '@mui/material/Tooltip';
+
 import Typist from 'react-typist';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -60,12 +62,14 @@ const Home = (props: HomeProps) => {
             <Typography className={classes.content} variant={lg_match ? 'h3': md_match ? 'h4' : 'h5'}>Welcome to my website!</Typography>
             <Grid container>
                 <Grid item md={8} sm={12} container justifyContent="center">
-                    <textarea
-                        disabled
-                        className={classes.bodyP}
-                        rows={20}
-                        defaultValue={defaultString}
-                    />
+                    <Tooltip title="Hint: base 64 decode">
+                        <textarea
+                            disabled
+                            className={classes.bodyP}
+                            rows={20}
+                            defaultValue={defaultString}
+                        />
+                    </Tooltip>
                 </Grid>
                 {md_match ? 
                     <Grid item md={4} container >

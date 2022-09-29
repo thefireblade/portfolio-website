@@ -17,13 +17,14 @@ interface EducationProps {
 
 const Education = (props: EducationProps) => {
     const theme = useTheme();
+    const xs_match = useMediaQuery(theme.breakpoints.up('sm'));
     const md_match = useMediaQuery(theme.breakpoints.up('md'));
     const lg_match = useMediaQuery(theme.breakpoints.up('lg'));
     
     const useStyles = makeStyles((theme: any)=>({
         page: {
             width: '100%',
-            height: '1200px',
+            height: md_match ? '1200px ' : xs_match ? '1350px' : '2200px',
 			backgroundColor: props.darkmode ? "#030f15" : "#ede1df",
 			color: props.darkmode ? "#a4bfcb" : "#01090d",
             justifyContent: 'center',
@@ -31,12 +32,12 @@ const Education = (props: EducationProps) => {
         },
         content:{
             padding: '20px',
-            textAlign: 'center'
+            textAlign: 'center',
         },
         bodyP: {
             paddingLeft: '20px',
             paddingRight: '20px',
-            paddingBottom: '20px',
+            paddingBottom: '20px'
         },
         image: {
             padding: '20px',

@@ -24,6 +24,7 @@ import image from '../../assets/smaller_image_of_myself_centered.png';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import CoronavirusIcon from '@mui/icons-material/Coronavirus';
 import { DarkMode } from '@mui/icons-material';
+import { match } from 'assert';
 
 const drawerWidth = 240;
 
@@ -185,6 +186,7 @@ export default function MiniDrawer(props: MiniDrawerProps) {
   }
 
   const determineLocation = () => {
+    if(scrollPos === 0) return 'home';
     const getOffset = (el: HTMLElement | null) => {
       const rect = el?.getBoundingClientRect();
       if(rect === undefined) return 0;

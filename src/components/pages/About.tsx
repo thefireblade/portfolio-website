@@ -16,13 +16,14 @@ interface AboutProps {
 
 const About = (props: AboutProps) => {
     const theme = useTheme();
+    const xs_match = useMediaQuery(theme.breakpoints.up('sm'));
     const md_match = useMediaQuery(theme.breakpoints.up('md'));
     const lg_match = useMediaQuery(theme.breakpoints.up('lg'));
     
     const useStyles = makeStyles((theme: any)=>({
         page: {
             width: '100%',
-            height: '550px',
+            height: xs_match ? '550px ' : '650px',
 			backgroundColor: props.darkmode ? "#384347" : "#6f7475",
 			color: props.darkmode ? "#a4bfcb" : "#01090d",
             justifyContent: 'center',
@@ -58,7 +59,7 @@ const About = (props: AboutProps) => {
         <Grid className={classes.page}>
             <div id="about" className={classes.anchor}></div>
             <Grid item xs={12} className={classes.contentTitle} container>
-                <Grid item xs={8}  container>
+                <Grid item xs={lg_match ? 8: md_match ? 8 : 12}  container>
                     <Typist avgTypingDelay={5} cursor={{show: false}}>
                         <br/>
                         <Typography className={classes.contentHeader} variant={lg_match ? 'h3': md_match ? 'h4' : 'h5'}>About Me</Typography>
@@ -69,9 +70,12 @@ const About = (props: AboutProps) => {
                         <Button className={classes.social} variant="contained" startIcon={<LinkedInIcon/>} target="_blank" href='https://www.linkedin.com/in/jhuang6625/'>LinkedIn Profile</Button>
                     </Typist>
                 </Grid>
-                <Grid item xs={4} container>
-                    <img alt="Photo of me" src={image} className={classes.photo}/>
-                </Grid>
+                {   
+                    (lg_match || md_match) &&
+                    <Grid item xs={lg_match ? 4: 4} container>
+                        <img alt="Photo of me" src={image} className={classes.photo}/>
+                    </Grid>
+                }
             </Grid>
         </Grid>
     );
