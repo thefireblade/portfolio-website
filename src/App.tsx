@@ -12,9 +12,7 @@ import Experience from "./components/pages/Experience";
 import Skills from "./components/pages/Skills";
 import { Button } from "@mui/material";
 import MiniDrawer from "./components/navigation/MiniDrawer";
-
-
-
+import { Fade } from "react-awesome-reveal";
 
 const App = () => {	
 	const [darkmode, setDarkmode] = useState(true);
@@ -38,6 +36,7 @@ const App = () => {
 			type: darkmode ? "dark" : "light"
 		}
 	});
+
 	theme = responsiveFontSizes(theme);
 	const useStyles = makeStyles((theme: any) => ({
 		main : {
@@ -61,17 +60,18 @@ const App = () => {
 	const toggleNav = () => {
 		setNavOpen(!navOpen)
 	}
-	
-  
-  	return (
+
+	return (
 		<div className={classes.main}>
 			<Grid container className={classes.page}>
 				<MiniDrawer darkmode={darkmode}>
-					<Home darkmode={darkmode}/>
-					<About darkmode={darkmode}/>
-					<Education darkmode={darkmode}/>
-					<Experience darkmode={darkmode}/>
-					<Skills darkmode={darkmode}/>
+					<Fade direction="left" delay={100} duration={800} triggerOnce>
+						<Home darkmode={darkmode}/>
+						<About darkmode={darkmode}/>
+						<Education darkmode={darkmode}/>
+						<Experience darkmode={darkmode}/>
+						<Skills darkmode={darkmode}/>
+					</Fade>
 				</MiniDrawer>
 			</Grid>
 			<DarkModeSwitch checked={darkmode} onClick={() => {
