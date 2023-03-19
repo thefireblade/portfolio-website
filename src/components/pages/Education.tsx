@@ -81,7 +81,7 @@ const Education = (props: EducationProps) => {
                         <Typography variant="h6">Columbia University</Typography>
                         <Typography variant="body2">Masters of Science</Typography>
                         <Typography variant="body2">Computer Science Major</Typography>
-                        <Typography variant="caption">GPA: 3.54 / 4.0</Typography>
+                        <Typography variant="caption">GPA: 3.63 / 4.0</Typography>
                         <br/>
                         <Typography variant="caption">
                         - Analysis of Algorithms<br/>
